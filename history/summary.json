@@ -16,7 +16,7 @@
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2026-05-01": 199
+      "2026-05-01": 257
     }
   },
   {
@@ -36,7 +36,7 @@
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2026-05-01": 1035,
+      "2026-05-01": 1093,
       "2026-04-30": 28
     }
   },
@@ -57,7 +57,7 @@
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2026-05-01": 1035,
+      "2026-05-01": 1093,
       "2026-04-30": 28
     }
   },
@@ -84,19 +84,19 @@
     "url": "https://rhope-backend-staging.fly.dev/api/health",
     "icon": "https://icons.duckduckgo.com/ip3/rhope-backend-staging.fly.dev.ico",
     "slug": "rhope-api-staging",
-    "status": "down",
-    "uptime": "99.96%",
-    "uptimeDay": "99.96%",
-    "uptimeWeek": "99.96%",
-    "uptimeMonth": "99.96%",
-    "uptimeYear": "99.96%",
-    "time": 71,
-    "timeDay": 71,
-    "timeWeek": 71,
-    "timeMonth": 71,
-    "timeYear": 71,
+    "status": "up",
+    "uptime": "77.40%",
+    "uptimeDay": "77.40%",
+    "uptimeWeek": "77.40%",
+    "uptimeMonth": "77.40%",
+    "uptimeYear": "77.40%",
+    "time": 103,
+    "timeDay": 103,
+    "timeWeek": 103,
+    "timeMonth": 103,
+    "timeYear": 103,
     "dailyMinutesDown": {
-      "2026-05-01": 0
+      "2026-05-01": 58
     }
   }
 ]
