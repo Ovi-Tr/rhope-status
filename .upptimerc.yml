@@ -1,36 +1,82 @@
-  owner: Ovi-Tr
-  repo: rhope-status
+# Upptime configuration — public status page for rhope.
+# https://upptime.js.org/docs/configuration
+#
+# Edits should land here AND in `Ovi-Tr/rhope/infra/status-page/.upptimerc.yml`
+# (the canonical copy that travels with the application repo for review-in-PR).
+# See https://github.com/Ovi-Tr/rhope/blob/main/docs/runbooks/status-page-setup.md
 
-  sites:
-    - name: rhope app (SSR)
-      url: https://app.rhope.app
-    - name: rhope API
-      url: https://api.rhope.app/api/health
-    - name: rhope WebSocket
-      url: https://api.rhope.app/ws/info
-      check: ws
+owner: Ovi-Tr
+repo: rhope-status
 
-  status-website:
-    cname: status.rhope.app
-    name: rhope
-    introTitle: "**rhope.** real-time status"
-    introMessage: Status of rhope's production services. Updated every 5 minutes.
-    navbar:
-      - title: Status
-        href: /
-      - title: GitHub
-        href: https://github.com/<your-user>/rhope-status
-    theme: dark
+# Probe targets. Names should be slug-safe — Upptime derives history filenames
+# from the slug ("rhope app SSR" → "rhope-app-ssr") so anything tricky in the
+# name shows up in the URL path on the rendered page.
+sites:
+  # ────────── Production ──────────
+  # `app.rhope.app` and `api.rhope.app` will be live once the prod equivalent
+  # of W2.6's cloudflare-staging.md is applied. Until then these probes will
+  # be red — keeping them in the list documents the intended target so we
+  # don't have to hunt for the URLs at launch time. Toggle by commenting out
+  # if the persistent red is misleading to early viewers.
+  - name: rhope app
+    url: https://app.rhope.app/
+    expectedStatusCodes: [200]
+    maxResponseTime: 5000
 
-  workflowSchedule:
-    graphs: "0 0 * * *"     # daily uptime graphs at midnight UTC
-    responseTime: "0 23 * * *"
-    staticSite: "0 1 * * *"
-    summary: "0 0 * * *"
-    updates: "0 3 * * *"
-    updateTemplate: "0 3 * * *"
-    updateResponseTime: "0 23 * * *"
+  - name: rhope API
+    url: https://api.rhope.app/api/health
+    expectedStatusCodes: [200]
+    maxResponseTime: 3000
 
-  i18n:
-    activeIncidents: Active incidents
-    allSystemsOperational: All systems operational
+  - name: rhope WebSocket
+    # SockJS exposes /ws/info as a plain HTTPS endpoint that returns 200 JSON
+    # when the upgrade path is alive. Same dispatcher path as the WS
+    # handshake — green here means the broker is ready to accept CONNECT.
+    url: https://api.rhope.app/ws/info
+    expectedStatusCodes: [200]
+    maxResponseTime: 3000
+
+  # ────────── Staging ──────────
+  # Surfaced separately so a staging outage doesn't make the prod row red.
+  # Staging cold-start can be slower than prod (suspended machines wake on
+  # request), so its SLA is more generous.
+  - name: rhope app staging
+    url: https://rhope-ssr-staging.fly.dev/
+    expectedStatusCodes: [200]
+    maxResponseTime: 8000
+
+  - name: rhope API staging
+    url: https://rhope-backend-staging.fly.dev/api/health
+    expectedStatusCodes: [200]
+    maxResponseTime: 5000
+
+# Public-facing status site rendered to the gh-pages branch.
+status-website:
+  cname: status.rhope.app
+  name: rhope
+  introTitle: '**rhope.** real-time status'
+  introMessage: |
+    Status of rhope's production services. Probed every 5 minutes.
+    Incidents are tracked in [issues](https://github.com/Ovi-Tr/rhope-status/issues).
+  navbar:
+    - title: Status
+      href: /
+    - title: GitHub
+      href: https://github.com/Ovi-Tr/rhope
+  theme: dark
+
+# Cron schedule for Upptime's secondary workflows. Defaults are fine for now;
+# the inline overrides below shift them to off-peak UTC so they don't compete
+# with the every-5-min uptime probe for runner minutes.
+workflowSchedule:
+  graphs: '0 0 * * *'
+  responseTime: '0 23 * * *'
+  staticSite: '0 1 * * *'
+  summary: '0 0 * * *'
+  updates: '0 3 * * *'
+  updateTemplate: '0 3 * * *'
+  updateResponseTime: '0 23 * * *'
+
+i18n:
+  activeIncidents: Active incidents
+  allSystemsOperational: All systems operational
