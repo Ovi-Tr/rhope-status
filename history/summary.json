@@ -1,1 +1,100 @@
-[]
+[
+  {
+    "name": "rhope app",
+    "url": "https://app.rhope.app/",
+    "icon": "https://icons.duckduckgo.com/ip3/app.rhope.app.ico",
+    "slug": "rhope-app",
+    "status": "down",
+    "uptime": "0.00%",
+    "uptimeDay": "0.00%",
+    "uptimeWeek": "0.00%",
+    "uptimeMonth": "0.00%",
+    "uptimeYear": "0.00%",
+    "time": 0,
+    "timeDay": 0,
+    "timeWeek": 0,
+    "timeMonth": 0,
+    "timeYear": 0,
+    "dailyMinutesDown": {
+      "2026-05-01": 0
+    }
+  },
+  {
+    "name": "rhope API",
+    "url": "https://api.rhope.app/api/health",
+    "icon": "https://icons.duckduckgo.com/ip3/api.rhope.app.ico",
+    "slug": "rhope-api",
+    "status": "down",
+    "uptime": "0.00%",
+    "uptimeDay": "0.00%",
+    "uptimeWeek": "0.00%",
+    "uptimeMonth": "0.00%",
+    "uptimeYear": "0.00%",
+    "time": 0,
+    "timeDay": 0,
+    "timeWeek": 0,
+    "timeMonth": 0,
+    "timeYear": 0,
+    "dailyMinutesDown": {
+      "2026-05-01": 836,
+      "2026-04-30": 28
+    }
+  },
+  {
+    "name": "rhope WebSocket",
+    "url": "https://api.rhope.app/ws/info",
+    "icon": "https://icons.duckduckgo.com/ip3/api.rhope.app.ico",
+    "slug": "rhope-web-socket",
+    "status": "down",
+    "uptime": "0.00%",
+    "uptimeDay": "0.00%",
+    "uptimeWeek": "0.00%",
+    "uptimeMonth": "0.00%",
+    "uptimeYear": "0.00%",
+    "time": 0,
+    "timeDay": 0,
+    "timeWeek": 0,
+    "timeMonth": 0,
+    "timeYear": 0,
+    "dailyMinutesDown": {
+      "2026-05-01": 836,
+      "2026-04-30": 28
+    }
+  },
+  {
+    "name": "rhope app staging",
+    "url": "https://rhope-ssr-staging.fly.dev/",
+    "icon": "https://icons.duckduckgo.com/ip3/rhope-ssr-staging.fly.dev.ico",
+    "slug": "rhope-app-staging",
+    "status": "up",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
+    "time": 1722,
+    "timeDay": 1722,
+    "timeWeek": 1722,
+    "timeMonth": 1722,
+    "timeYear": 1722,
+    "dailyMinutesDown": {}
+  },
+  {
+    "name": "rhope API staging",
+    "url": "https://rhope-backend-staging.fly.dev/api/health",
+    "icon": "https://icons.duckduckgo.com/ip3/rhope-backend-staging.fly.dev.ico",
+    "slug": "rhope-api-staging",
+    "status": "up",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
+    "time": 71,
+    "timeDay": 71,
+    "timeWeek": 71,
+    "timeMonth": 71,
+    "timeYear": 71,
+    "dailyMinutesDown": {}
+  }
+]
