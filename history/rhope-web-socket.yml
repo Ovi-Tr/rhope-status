@@ -1,7 +1,7 @@
 url: https://api.rhope.app/ws/info
-status: degraded
+status: down
 code: 404
-responseTime: 10100
-lastUpdated: 2026-05-10T19:20:57.004Z
+responseTime: 75
+lastUpdated: 2026-05-10T20:07:02.620Z
 startTime: 2026-04-30T23:48:02.659Z
 generator: Upptime <https://github.com/upptime/upptime>
